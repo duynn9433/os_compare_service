@@ -35,11 +35,11 @@ install_centos() {
     sudo yum install -y clang
 
     # Install Docker
-    sudo yum install -y yum-utils
-    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-    sudo yum install -y docker-ce docker-ce-cli containerd.io
-    sudo systemctl start docker
-    sudo systemctl enable docker
+#    sudo yum install -y yum-utils
+#    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+#    sudo yum install -y docker-ce docker-ce-cli containerd.io
+#    sudo systemctl start docker
+#    sudo systemctl enable docker
 }
 
 # Function to install on Ubuntu
@@ -52,8 +52,7 @@ install_ubuntu() {
     sudo apt install -y java-21-openjdk-devel
 
     # Install Python
-    sudo apt install -y python3 python3-pip
-    sudo pip3 install numpy
+    sudo apt install -y python3 python3-pip python3-numpy
 
     # Install Node.js
     curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash -
@@ -66,13 +65,13 @@ install_ubuntu() {
     sudo apt install -y clang
 
     # Install Docker
-    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    sudo apt update
-    sudo apt install -y docker-ce docker-ce-cli containerd.io
-    sudo systemctl start docker
-    sudo systemctl enable docker
+#    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+#    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#    sudo apt update
+#    sudo apt install -y docker-ce docker-ce-cli containerd.io
+#    sudo systemctl start docker
+#    sudo systemctl enable docker
 }
 
 # Detect the OS and install the required packages
