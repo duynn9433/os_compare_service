@@ -17,12 +17,15 @@ install_centos() {
 
     # Install Java 21
     sudo yum install -y java-21-openjdk
+    sudo yum install -y java-21-openjdk-devel
 
     # Install Python
     sudo yum install -y python3
+    sudo yum install -y python3-pip
+    sudo pip3 install numpy
 
     # Install Node.js
-    curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
+    curl -fsSL https://rpm.nodesource.com/setup_21.x | sudo bash -
     sudo yum install -y nodejs
 
     # Install C++ build tools
@@ -46,12 +49,14 @@ install_ubuntu() {
     # Install Java 21
     sudo apt update
     sudo apt install -y openjdk-21-jdk
+    sudo apt install -y java-21-openjdk-devel
 
     # Install Python
     sudo apt install -y python3 python3-pip
+    sudo pip3 install numpy
 
     # Install Node.js
-    curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash -
     sudo apt install -y nodejs
 
     # Install C++ build tools
