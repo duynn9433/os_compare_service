@@ -1,0 +1,10 @@
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+DefaultTest,2025-04-24T11:01:20Z,2025-04-24T11:01:30Z,29675,10.102,0.968,0.347,9.271,0.216,0.315,0.389,0.441,0.499,0.876,8.251,50.000,2937.511,12866854.681,0.096
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+WSB01,2025-04-24T11:13:56Z,2025-04-24T11:14:06Z,70092,10.002,0.067,0.160,14.072,0.341,0.130,0.162,0.182,0.210,0.703,13.078,0.000,7008.096,894836.463,0.007
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+WSB03,2025-04-24T11:15:10Z,2025-04-24T11:15:20Z,7395,10.014,0.297,1.443,30.332,1.479,0.761,3.226,3.881,4.370,5.985,30.332,50.000,738.503,3984959.515,0.030
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+WSB03,2025-04-24T11:18:12Z,2025-04-24T11:18:22Z,30354,10.100,0.028,0.474,12.535,0.644,0.270,0.936,1.927,2.382,2.963,11.539,0.000,3005.333,376248.484,0.003
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+WSB03,2025-04-24T11:26:34Z,2025-04-24T11:26:44Z,28901,10.100,0.027,0.805,80.198,3.873,0.271,1.267,2.503,3.085,4.748,79.151,0.000,2861.489,362482.510,0.003

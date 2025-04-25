@@ -1,0 +1,1 @@
+dd if=/dev/zero of=file.bin bs=1M count=5

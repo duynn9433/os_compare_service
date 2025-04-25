@@ -1,0 +1,1 @@
+clang++ -O2 read_file.cpp -o read_file

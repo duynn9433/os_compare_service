@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "att1": true,
+  "att2": 8,
+  "att3": 1234,
+  "att4": 56789,
+  "att5": 9876543210,
+  "att6": 12.34,
+  "att7": 56.789,
+  "att8": "A",
+  "att9": "example text 9",
+  "att10": "example text 10"
+}

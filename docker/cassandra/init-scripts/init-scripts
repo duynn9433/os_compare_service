@@ -1,0 +1,3 @@
+-- Create keyspace
+CREATE KEYSPACE IF NOT EXISTS mykeyspace
+WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };

@@ -1,0 +1,8 @@
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+RD01-mariadb,2025-04-25T08:08:00Z,2025-04-25T08:08:10Z,4803,10.008,0.012,2.080,8.823,0.278,2.027,2.205,2.403,2.654,3.092,8.823,0.000,479.936,164997.931,0.001
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+RD02-write-mariadb,2025-04-25T08:19:30Z,2025-04-25T08:19:40Z,22206,10.002,0.731,0.472,16.462,0.462,0.426,0.531,0.592,0.655,0.982,15.562,50.000,2220.208,9804554.616,0.073
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+RD02-write-mariadb,2025-04-25T08:20:07Z,2025-04-25T08:20:17Z,22989,10.100,0.756,0.470,11.722,0.433,0.424,0.524,0.588,0.664,2.064,10.844,50.000,2276.251,10051594.336,0.075
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+RD02-write-mariadb,2025-04-25T08:21:08Z,2025-04-25T08:21:18Z,746,10.074,0.000,13.522,42.625,2.035,12.797,15.390,16.362,16.858,19.172,42.625,0.000,74.052,5419.014,0.000

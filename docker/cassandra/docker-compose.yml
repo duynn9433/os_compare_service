@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra-db
+    ports:
+      - "9042:9042"  # CQL native transport port
+    environment:
+      - CASSANDRA_CLUSTER_NAME=my_cluster
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=100M
+    volumes:
+      - cassandra-data:/var/lib/cassandra
+      - ./init-scripts:/init-scripts
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -e 'describe keyspaces' || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+    networks:
+      - cassandra-network
+
+  # Simple initialization service that only creates the keyspace
+  cassandra-init:
+    image: cassandra:latest
+    depends_on:
+      cassandra:
+        condition: service_healthy
+    command: >
+      bash -c "
+        echo 'Waiting for Cassandra to be ready...' && 
+        sleep 5 &&
+        echo 'Creating keyspace only...' &&
+        cqlsh cassandra -e \"CREATE KEYSPACE IF NOT EXISTS mykeyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };\" &&
+        echo 'Keyspace created successfully!'"
+    networks:
+      - cassandra-network
+
+volumes:
+  cassandra-data:
+
+networks:
+  cassandra-network:
+    driver: bridge
