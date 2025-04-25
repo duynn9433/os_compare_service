@@ -13,7 +13,7 @@ detect_os() {
 
 # Function to install on CentOS
 install_centos() {
-    echo "Installing Java 21, Python, Node.js, C++, Docker on CentOS..."
+    echo "Installing Java 21, Python, Node.js, C++, Clang, Docker on CentOS..."
 
     # Install Java 21
     sudo yum install -y java-21-openjdk
@@ -28,6 +28,9 @@ install_centos() {
     # Install C++ build tools
     sudo yum groupinstall -y "Development Tools"
 
+    # Install Clang
+    sudo yum install -y clang
+
     # Install Docker
     sudo yum install -y yum-utils
     sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -38,7 +41,7 @@ install_centos() {
 
 # Function to install on Ubuntu
 install_ubuntu() {
-    echo "Installing Java 21, Python, Node.js, C++, Docker on Ubuntu..."
+    echo "Installing Java 21, Python, Node.js, C++, Clang, Docker on Ubuntu..."
 
     # Install Java 21
     sudo apt update
@@ -53,6 +56,9 @@ install_ubuntu() {
 
     # Install C++ build tools
     sudo apt install -y build-essential
+
+    # Install Clang
+    sudo apt install -y clang
 
     # Install Docker
     sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
