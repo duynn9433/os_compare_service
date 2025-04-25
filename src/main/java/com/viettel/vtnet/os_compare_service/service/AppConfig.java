@@ -25,4 +25,25 @@ public class AppConfig {
 
     @Value("${spring.jpa.properties.hibernate.jdbc.batch_size}")
     private int batchSize;
+
+    @Value("${spring.datasource.postgres.url}")
+    private String postgresUrl;
+    @Value("${spring.datasource.postgres.username}")
+    private String postgresUsername;
+    @Value("${spring.datasource.postgres.password}")
+    private String postgresPassword;
+    @Value("${spring.datasource.postgres.driver-class-name}")
+    private String postgresDriverClassName;
+
+
+
+    @Value("${spring.datasource.mariadb.url}")
+    private String mariaDbUrl;
+    @Value("${spring.datasource.mariadb.username}")
+    private String mariaDbUsername;
+    @Value("${spring.datasource.mariadb.password}")
+    private String mariaDbPassword;
+    @Value("${spring.datasource.mariadb.driver-class-name}")
+    private String mariaDbDriverClassName;
+
 }
