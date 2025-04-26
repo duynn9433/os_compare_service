@@ -8,7 +8,7 @@ int main() {
         return 1;
     }
 
-    for (long long i = 1; i <= 100000000; ++i) {
+    for (long long i = 1; i <= 30000000; ++i) {
         file << "This is line number " << i << "\n";
     }
 
