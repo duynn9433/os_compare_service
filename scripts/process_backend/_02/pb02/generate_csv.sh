@@ -1,9 +1,2 @@
-#!/bin/bash
-# generate_csv.sh
-
-n=${1:-10000}
-echo "Generating sample.csv with $n lines..." > sample.csv
-for ((i = 1; i <= n; i++)); do
-    echo "Line $i" >> sample.csv
-done
-echo "✅ Done."
+clang++ -O2 -std=c++17 -o generate_lines generate.cpp
+./generate_lines
