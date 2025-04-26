@@ -11,28 +11,28 @@ echo "🔁 Repeat: $repeat"
 echo "-----------------------------"
 
 total_start=$(date +%s%3N)
-sleep 10
+sleep 60
 echo ""
 echo "🐍 Python"
 python_start=$(date +%s%3N)
 (cd python && bash write_file.sh "$lines" "$repeat" "../$file")
 python_end=$(date +%s%3N)
 python_elapsed=$(( python_end - python_start ))
-sleep 10
+sleep 60
 echo ""
 echo "☕ Java"
 java_start=$(date +%s%3N)
 (cd java && bash write_file.sh "$lines" "$repeat" "../$file")
 java_end=$(date +%s%3N)
 java_elapsed=$(( java_end - java_start ))
-sleep 10
+sleep 60
 echo ""
 echo "🟢 NodeJS"
 node_start=$(date +%s%3N)
 (cd node && bash write_file.sh "$lines" "$repeat" "../$file")
 node_end=$(date +%s%3N)
 node_elapsed=$(( node_end - node_start ))
-sleep 10
+sleep 60
 echo ""
 echo "💠 C++"
 cpp_start=$(date +%s%3N)

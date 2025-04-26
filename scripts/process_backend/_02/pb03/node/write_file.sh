@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-lines=${1:-10000}
+lines=${1:-10000000}
 repeat=${2:-1}
 file=${3:-../output.csv}
 
