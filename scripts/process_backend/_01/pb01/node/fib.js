@@ -7,4 +7,7 @@ function fib(n) {
     }
     return b;
 }
-console.log("NodeJS Fibonacci(40) =", fib(40));
+
+for (let i = 0; i < 1000000; i++) {
+    console.log(i, fib(40));
+}

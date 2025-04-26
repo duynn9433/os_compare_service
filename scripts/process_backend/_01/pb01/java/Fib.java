@@ -10,6 +10,9 @@ public class Fib {
         return b;
     }
     public static void main(String[] args) {
-        System.out.println("Java Fibonacci(40) = " + fib(40));
+        for (int i = 0; i < 1000000; i++) {
+            System.out.println("Java " + i + " " + fib(40));
+//            fib(40);
+        }
     }
 }

@@ -4,4 +4,5 @@ def fib(n):
         a, b = b, a + b
     return b
 
-print("Python Fibonacci(40) =", fib(40))
+for i in range(1, 1000000):
+    print(f"Python Fibonacci {i} : {fib(40)}")
