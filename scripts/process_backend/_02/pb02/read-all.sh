@@ -42,9 +42,13 @@ measure_time() {
 }
 
 # Chạy và đo thời gian cho từng ngôn ngữ
+sleep 10
 measure_time "🐍 Python" "python" "read.sh" times_python
+sleep 10
 measure_time "☕ Java" "java" "read.sh" times_java
+sleep 10
 measure_time "🟢 NodeJS" "node" "read.sh" times_node
+sleep 10
 measure_time "💠 C++" "cpp" "read.sh" times_cpp
 
 # In bảng tổng hợp thời gian ở cuối

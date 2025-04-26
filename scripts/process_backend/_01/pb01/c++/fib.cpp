@@ -12,7 +12,7 @@ long long fib(int n) {
 }
 int main() {
     for(int i = 0; i <= 1000000; ++i) {
-        fib(40);
+        cout << "C++ Fibonacci " << i << " : " << fib(40) << endl;
     }
     return 0;
 }

@@ -30,9 +30,13 @@ measure_time() {
   echo "🕒 $lang total time (only run): $duration seconds"
 }
 
+sleep 10
 measure_time "C++"     "c++"     "fib.sh"
+sleep 10
 measure_time "Java"    "java"    "fib.sh"
+sleep 10
 measure_time "Python"  "python"  "fib.sh"
+sleep 10
 measure_time "NodeJS"  "node"    "fib.sh"
 
 # Print summary at the end
