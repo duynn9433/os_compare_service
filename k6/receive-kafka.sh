@@ -1,0 +1,1 @@
+./k6 run --vus 100 --iterations 10000 scripts/consumer.js
