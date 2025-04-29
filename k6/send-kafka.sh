@@ -1,1 +1,1 @@
-./k6 run --vus 100 --iterations 10000 scripts/producer.js
+./k6 run --vus 100 --iterations 10000 kafka/producer.js

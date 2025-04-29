@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis-test
+    ports:
+      - "6379:6379"
+
+  hazelcast:
+    image: hazelcast/hazelcast:5.3
+    container_name: hazelcast-test
+    ports:
+      - "5701:5701"
+    environment:
+      - HZ_NETWORK_PUBLICADDRESS=hazelcast:5701

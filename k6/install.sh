@@ -48,6 +48,7 @@ echo 'export PATH=$PATH:$HOME/go/bin'
 
 echo "=== [4] Build k6 + xk6-kafka ==="
 xk6 build --with github.com/mostafa/xk6-kafka@latest
+#--with github.com/dgzlopes/xk6-redis
 
 echo "✅ Build thành công! File 'k6' đã được tạo."
 echo "=> Bạn có thể chạy: ./k6 version"
