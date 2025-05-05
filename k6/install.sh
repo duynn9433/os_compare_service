@@ -19,10 +19,11 @@ if ! command -v go &> /dev/null; then
     echo "Go chưa cài. Tiến hành cài đặt Go."
 
     if [[ "$OS" == "ubuntu" ]]; then
-        sudo apt update
-        sudo apt install -y golang-go
+        sudo apt remove golang-go
+        sudo rm -rf /usr/local/go
     elif [[ "$OS" == "centos" ]]; then
-        sudo yum install -y golang
+        sudo yum remove golang
+        sudo rm -rf /usr/local/go
     else
         echo "OS chưa hỗ trợ tự động cài Go."
         exit 1
@@ -31,10 +32,15 @@ else
     echo "Go đã được cài đặt."
 fi
 
+GO_VERSION=1.24.2
+wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+source ~/.bashrc
 echo "Go version: $(go version)"
 
 echo "=== [3] Cài xk6 ==="
-go install go.k6.io/xk6/cmd/xk6@latest
+
 
 # Đảm bảo GOPATH có trong PATH
 if [[ ":$PATH:" != *":$HOME/go/bin:"* ]]; then
