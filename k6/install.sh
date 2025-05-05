@@ -40,7 +40,7 @@ source ~/.bashrc
 echo "Go version: $(go version)"
 
 echo "=== [3] Cài xk6 ==="
-
+go install go.k6.io/xk6/cmd/xk6@latest
 
 # Đảm bảo GOPATH có trong PATH
 if [[ ":$PATH:" != *":$HOME/go/bin:"* ]]; then
