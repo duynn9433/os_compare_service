@@ -23,35 +23,28 @@ def upload_file(i, file_size_kb, bucket_name, endpoint_url, access_key, secret_k
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--threads', type=int, default=100, help='Số luồng đồng thời')
-    parser.add_argument('--filesize', type=int, default=1024, help='Dung lượng file mỗi file (KB)')
-    parser.add_argument('--total', type=int, default=1000, help='Tổng số file cần upload')
+    parser.add_argument('--threads', type=int, default=10)
+    parser.add_argument('--filesize', type=int, default=1024)
+    parser.add_argument('--total', type=int, default=100)
     parser.add_argument('--bucket', type=str, default='testbucket')
     parser.add_argument('--endpoint', type=str, default='http://localhost:9000')
     parser.add_argument('--access_key', type=str, default='minioadmin')
     parser.add_argument('--secret_key', type=str, default='minioadmin')
-    parser.add_argument('--folder', type=str, default='tempfiles', help='Thư mục chứa file tạm thời')
     args = parser.parse_args()
 
-    os.makedirs(args.folder, exist_ok=True)
-
-    threads = []
+    os.makedirs('tempfiles', exist_ok=True)
     start = time.time()
 
-    for i in range(args.total):
-        while threading.active_count() > args.threads:
-            time.sleep(0.01)  # Chờ bớt luồng
-
-        t = threading.Thread(target=upload_file, args=(
-            i, args.filesize, args.bucket, args.endpoint, args.access_key, args.secret_key, args.folder))
-        t.start()
-        threads.append(t)
-
-    for t in threads:
-        t.join()
+    with ThreadPoolExecutor(max_workers=args.threads) as executor:
+        futures = [
+            executor.submit(upload_file, i, args.filesize, args.bucket, args.endpoint, args.access_key, args.secret_key)
+            for i in range(args.total)
+        ]
+        for future in as_completed(futures):
+            pass  # xử lý lỗi nếu muốn
 
     end = time.time()
-    print(f"\n⏱️ Tổng thời gian upload {args.total} file ({args.filesize}KB mỗi file): {end - start:.2f} giây")
+    print(f"\n⏱️ Tổng thời gian upload: {end - start:.2f} giây")
 
     # Xoá thư mục chứa file tạm
     try:

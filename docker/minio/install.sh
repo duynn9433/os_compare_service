@@ -23,17 +23,12 @@ install_mc() {
 
   OS=$(uname)
   if [[ "$OS" == "Linux" ]]; then
-    if [ -f /etc/debian_version ]; then
-      echo "📦 Ubuntu/Debian detected. Cài qua APT..."
-      sudo apt update
-      sudo apt install -y mc
-    elif [ -f /etc/redhat-release ]; then
-      echo "📦 CentOS/Red Hat detected. Cài qua DNF..."
-      sudo dnf install -y mc
-    else
-      echo "❌ Không xác định được distro Linux. Cài thủ công từ MinIO."
-      exit 1
-    fi
+    curl https://dl.min.io/client/mc/release/linux-amd64/mc \
+      --create-dirs \
+      -o $HOME/minio-binaries/mc
+
+    chmod +x $HOME/minio-binaries/mc
+    export PATH=$PATH:$HOME/minio-binaries/
   elif [[ "$OS" == "Darwin" ]]; then
     echo "🍎 macOS detected. Cài qua Homebrew..."
     brew install minio/stable/mc || brew install mc
@@ -76,6 +71,6 @@ cat <<EOF
 🔹 ST03 - Truy cập đồng thời:
     (Đảm bảo đã có file minio_upload.py)
 
-    python3 minio_upload.py --threads 50 --filesize 1024 --total 1000
+    python3 minio-test.py --threads 10 --filesize 1024 --total 1000
 
 EOF

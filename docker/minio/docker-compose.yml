@@ -11,6 +11,10 @@ services:
     volumes:
       - minio-data:/data
     command: server /data --console-address ":9001"
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
 
 volumes:
   minio-data:
