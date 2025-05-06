@@ -1,0 +1,2 @@
+TestName,StartTime,EndTime,TotalRequests,TotalTime(s),TotalTransfer(Gb),Average(ms),Maximum(ms),StandardDeviation(ms),P50(ms),P90(ms),P95(ms),P97(ms),P99(ms),P99.99(ms),Error(%),RPS,TransferRaw(Bytes),Transfer(Gb/s)
+LB,2025-05-06T03:21:32Z,2025-05-06T03:21:42Z,9,10.034,0.001,12.591,38.125,10.138,9.238,38.125,38.125,38.125,38.125,38.125,0.000,0.897,11083.040,0.000
