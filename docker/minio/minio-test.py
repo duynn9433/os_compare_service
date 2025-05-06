@@ -4,6 +4,7 @@ import time
 import argparse
 import os
 import shutil
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def upload_file(i, file_size_kb, bucket_name, endpoint_url, access_key, secret_key, folder):
     try:
@@ -30,14 +31,15 @@ def main():
     parser.add_argument('--endpoint', type=str, default='http://localhost:9000')
     parser.add_argument('--access_key', type=str, default='minioadmin')
     parser.add_argument('--secret_key', type=str, default='minioadmin')
+    parser.add_argument('--folder', type=str, default='tempfiles', help='Thư mục chứa file tạm')
     args = parser.parse_args()
 
-    os.makedirs('tempfiles', exist_ok=True)
+    os.makedirs(args.folder, exist_ok=True)
     start = time.time()
 
     with ThreadPoolExecutor(max_workers=args.threads) as executor:
         futures = [
-            executor.submit(upload_file, i, args.filesize, args.bucket, args.endpoint, args.access_key, args.secret_key)
+            executor.submit(upload_file, i, args.filesize, args.bucket, args.endpoint, args.access_key, args.secret_key, args.folder)
             for i in range(args.total)
         ]
         for future in as_completed(futures):
