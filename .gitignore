@@ -39,3 +39,5 @@ docker/caching/hazelcast/hazelcast-simulator
 docker/caching/hazelcast/myFirstTest
 docker/caching/hazelcast/logs
 docker/lb/wrk/wrk_result.csv
+docker/minio/10GBfile
+docker/minio/venv
