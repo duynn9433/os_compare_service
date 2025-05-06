@@ -38,3 +38,4 @@ k6/k6
 docker/caching/hazelcast/hazelcast-simulator
 docker/caching/hazelcast/myFirstTest
 docker/caching/hazelcast/logs
+docker/lb/wrk/wrk_result.csv
