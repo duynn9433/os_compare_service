@@ -47,7 +47,8 @@ if [ ! -f "10GBfile" ]; then
 else
   echo "📁 File 10GBfile đã tồn tại."
 fi
-
+sudo mkdir -p /u01/minio/data
+sudo chown -R 1000:1000 /u01/minio/data  # user 1000 là mặc định của MinIO trong container
 # 4. Tạo alias và bucket
 echo "🔧 [4] Kết nối MinIO và tạo bucket..."
 mc alias set local http://localhost:9000 minioadmin minioadmin || true
