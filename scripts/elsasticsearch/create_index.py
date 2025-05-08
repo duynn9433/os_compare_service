@@ -9,6 +9,10 @@ INDEX_NAME = "test-index"
 def create_index():
     url = f"{ES_HOST}/{INDEX_NAME}"
     mapping = {
+        "settings": {
+            "number_of_shards": 1,
+            "number_of_replicas": 0  # rất quan trọng nếu chạy single-node
+        },
         "mappings": {
             "properties": {
                 "id": {"type": "integer"},
@@ -50,5 +54,6 @@ def get_document(doc_id=1):
 
 if __name__ == "__main__":
     create_index()
+    time.sleep(2)
     index_document()
     get_document()

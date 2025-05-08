@@ -1,1 +1,1 @@
-python3 generate_documents.py -n 1000 -o data.jsonl
+python3 generate_doc.py -n 60000000 -o data.jsonl
