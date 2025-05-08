@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 
 # Cấu hình Elasticsearch
 ES_HOST = "http://localhost:9200"
