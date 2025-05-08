@@ -1,0 +1,1 @@
+python3 generate_documents.py -n 1000 -o data.jsonl

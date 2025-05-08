@@ -1,0 +1,1 @@
+wrk -t100 -c100 -d30s -s query.lua http://localhost:9200/test-index/_search
