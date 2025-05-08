@@ -9,14 +9,25 @@ wrk.body = [[
   "query": {
     "bool": {
       "must": [
-        { "match": { "author": "John Doe" } },
-        { "range": { "timestamp": { "gte": "2023-01-01", "lte": "2025-12-31" } } }
-      ],
-      "should": [
-        { "match": { "category": "science" } },
-        { "match": { "tags": "technology" } }
-      ],
-      "minimum_should_match": 1
+        { "match": { "author": "Alice" } },
+        {
+          "bool": {
+            "should": [
+              { "term": { "category": "tech" } },
+              { "term": { "category": "science" } }
+            ],
+            "minimum_should_match": 1
+          }
+        },
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2024-01-01T00:00:00",
+              "lte": "2024-12-31T23:59:59"
+            }
+          }
+        }
+      ]
     }
   }
 }
