@@ -43,3 +43,5 @@ docker/minio/10GBfile
 docker/minio/venv
 docker/airflow/data
 docker/airflow/logs
+docker/airflow/bitnami/data
+docker/airflow/bitnami/logs
