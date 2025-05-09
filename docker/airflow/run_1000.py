@@ -54,19 +54,19 @@ def poll_dag_status(dag_run_ids, token):
     url_template = f"{airflow_url}/api/v2/dags/{dag_id}/dagRuns/{{}}"
     headers = {"Authorization": f"Bearer {token}"}
 
-    remaining = set(dag_run_ids)
-    while remaining:
-        print(f"🔄 Checking {len(remaining)} pending jobs...")
-        for dag_run_id in list(remaining):
+    for dag_run_id in dag_run_ids:
+        print(f"🔄 Checking status for DAG Run ID: {dag_run_id}")
+        while True:
             resp = requests.get(url_template.format(dag_run_id), headers=headers)
             if resp.status_code == 200:
                 state = resp.json().get("state")
                 if state in ["success", "failed"]:
                     print(f"[✔] {dag_run_id} finished with state: {state}")
-                    remaining.remove(dag_run_id)
+                    break
+                else:
+                    print(f"⏳ {dag_run_id} still running, waiting {poll_interval}s...")
             else:
                 print(f"[!] Failed to get status of {dag_run_id}: {resp.status_code}")
-        if remaining:
             time.sleep(poll_interval)
 
 def parse_arguments():
